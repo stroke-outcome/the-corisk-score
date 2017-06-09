@@ -1,7 +1,8 @@
 body {
   font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8rem; 
+  font-size: 1.8rem;
 }
+
 
 /**
  * helpers
@@ -26,6 +27,13 @@ body {
 .mt-30 {
   margin-top: 3rem;
 }
+
+.bg-gray {
+  background: #f8f9fa;
+  color: #667189;
+  padding: 1rem;
+}
+
 
 /**
  * App specific

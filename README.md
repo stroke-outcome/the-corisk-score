@@ -25,3 +25,8 @@ This project is hosted on github and can be published via:
 ```
 npm run deploy
 ```
+
+## TODO
+
+- Copeptin form validations
+- https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring

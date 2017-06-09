@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 
-import './App.css';
+// import './App.css';
 
 import parseUrlQueryKeyValue from './core/parseUrlQueryKeyValue';
+
+import Footer from './components/Footer';
 import CoScoreResult from './components/CoScoreResult';
 import CoScoreForm from './components/CoScoreForm';
 
@@ -31,13 +33,23 @@ class App extends Component {
     this.state = state;
   }
 
-  render() {
+  renderContent() {
     if (this.state.percentage) {
       return (<CoScoreResult percentage={this.state.percentage}/>);
     }
 
+    return (<CoScoreForm
+      age={this.state.age}
+      nihss={this.state.nihss}
+      copeptin={this.state.copeptin}/>);
+  }
+
+  render() {
     return (
-      <CoScoreForm age={this.state.age} nihss={this.state.nihss} copeptin={this.state.copeptin} />
+      <div>
+        {this.renderContent()}
+        <Footer />
+      </div>
     );
   }
 }

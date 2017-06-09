@@ -27,6 +27,8 @@ const CoScoreResult = (props) => {
           </div>
         </div>
         */}
+
+        
         
         <a href="/" className="btn btn-lg">Re-calculate</a>
       </div>
