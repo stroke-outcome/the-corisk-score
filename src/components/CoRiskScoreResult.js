@@ -1,11 +1,11 @@
 import React from 'react';
 
-import './co-score-result.css';
+import './CoRiskScoreResult.css';
 
-const CoScoreResult = (props) => {
+const CoRiskScoreResult = (props) => {
 
   return (
-    <div className="container grid-960">
+    <div className="container grid-480">
       <div className="text-center">
         <h1 className="app-title">Calculated CoRisk Score</h1>
         <div className="centered" id="score">
@@ -28,7 +28,7 @@ const CoScoreResult = (props) => {
         </div>
         */}
 
-        
+
         
         <a href="/" className="btn btn-lg">Re-calculate</a>
       </div>
@@ -37,4 +37,4 @@ const CoScoreResult = (props) => {
 
 };
 
-export default CoScoreResult;
+export default CoRiskScoreResult;

@@ -39,7 +39,7 @@ const updateState = (newState) => {
 /**
  * Note that the default values are undefined 
  */
-class CoScoreForm extends Component {
+class CoRiskScoreForm extends Component {
 
   constructor(props) {
     super(props);
@@ -202,4 +202,4 @@ class CoScoreForm extends Component {
   }
 }
 
-export default CoScoreForm;
+export default CoRiskScoreForm;

@@ -32,8 +32,8 @@
 
 @media (min-width: 400px) {
   #score {
-    height: 330px;
-    width: 330px;
+    height: 350px;
+    width: 350px;
   }
   #score-content-value {
     font-size: 20rem;
@@ -46,8 +46,8 @@
 
 @media (min-width: 480px) {
   #score {
-    height: 360px;
-    width: 360px;
+    height: 400px;
+    width: 400px;
   }
   #score-content-value {
     font-size: 22rem;

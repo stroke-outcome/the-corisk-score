@@ -1,6 +1,21 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+
 body {
   font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 1.8rem;
+  min-height: 100%;
+  padding-bottom: 15rem;
+  position: relative;
 }
 
 

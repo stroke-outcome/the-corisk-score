@@ -5,8 +5,8 @@ import React, {Component} from 'react';
 import parseUrlQueryKeyValue from './core/parseUrlQueryKeyValue';
 
 import Footer from './components/Footer';
-import CoScoreResult from './components/CoScoreResult';
-import CoScoreForm from './components/CoScoreForm';
+import CoRiskScoreResult from './components/CoRiskScoreResult';
+import CoRiskScoreForm from './components/CoRiskScoreForm';
 
 import calculateCoRiskScore, {validateAge, validateNihssPoints, validateCopeptinLevel} from './core/coRiskScore';
 
@@ -35,10 +35,10 @@ class App extends Component {
 
   renderContent() {
     if (this.state.percentage) {
-      return (<CoScoreResult percentage={this.state.percentage}/>);
+      return (<CoRiskScoreResult percentage={this.state.percentage}/>);
     }
 
-    return (<CoScoreForm
+    return (<CoRiskScoreForm
       age={this.state.age}
       nihss={this.state.nihss}
       copeptin={this.state.copeptin}/>);
