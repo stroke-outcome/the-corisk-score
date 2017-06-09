@@ -81,7 +81,7 @@ const calculateCoRiskScore = (age, nihss, copeptin) => {
   
   const value = 1 / (1 + Math.exp(7.661 - (0.060 * age) - (0.157 * nihss) - (1.2 * Math.log10(copeptin))));
 
-  return parseInt(value * 100);
+  return parseInt(value * 100, 10);
 };
 
 export default calculateCoRiskScore;

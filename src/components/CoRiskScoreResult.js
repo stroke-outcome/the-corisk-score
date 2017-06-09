@@ -30,7 +30,7 @@ const CoRiskScoreResult = (props) => {
 
 
         
-        <a href="" className="btn btn-lg">Re-calculate</a>
+        <a href="./" className="btn btn-lg">Re-calculate</a>
       </div>
     </div>
   );
