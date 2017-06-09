@@ -1,3 +1,7 @@
+/**
+ * Sticky footers!
+ */
+
 html {
   height: 100%;
   box-sizing: border-box;
@@ -11,11 +15,18 @@ html {
 
 
 body {
-  font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.8rem;
   min-height: 100%;
   padding-bottom: 15rem;
   position: relative;
+}
+
+/**
+ * Default
+ */
+
+body {
+  font-family: Lato, "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8rem;
 }
 
 
@@ -61,4 +72,54 @@ body {
 
 p.info {
   margin-bottom: 3rem;
+}
+
+/**
+ * Animations
+ */
+
+.fade-in {
+  animation: fadeIn 500ms;
+  -moz-animation: fadeIn 500ms;
+  -webkit-animation: fadeIn 500ms;
+  -o-animation: fadeIn 500ms;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  /* Firefox */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  /* Safari and Chrome */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  /* Opera */
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

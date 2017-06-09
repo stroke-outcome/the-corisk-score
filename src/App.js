@@ -34,7 +34,7 @@ class App extends Component {
   }
 
   renderContent() {
-    if (this.state.percentage) {
+    if (this.state.percentage !== null) {
       return (<CoRiskScoreResult percentage={this.state.percentage}/>);
     }
 
