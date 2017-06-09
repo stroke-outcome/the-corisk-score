@@ -6,6 +6,8 @@ import parseUrlQueryKeyValue from './core/parseUrlQueryKeyValue';
 import CoScoreResult from './components/CoScoreResult';
 import CoScoreForm from './components/CoScoreForm';
 
+import calculateCoRiskScore, {validateAge, validateNihssPoints, validateCopeptinLevel} from './core/coRiskScore';
+
 class App extends Component {
 
   constructor(props) {
@@ -21,9 +23,9 @@ class App extends Component {
       percentage: null
     };
 
-    // TODO: calculate the formula and if valid, show it!
-    if (age && nihss && copeptin) {
-      state.percentage = 99;
+    const percentage = calculateCoRiskScore(age, nihss, copeptin);
+    if (percentage !== -1) {
+      state.percentage = percentage;
     }
 
     this.state = state;

@@ -5,9 +5,9 @@ import './co-score-result.css';
 const CoScoreResult = (props) => {
 
   return (
-    <div className="container grid-480">
+    <div className="container grid-960">
       <div className="text-center">
-        <h1 className="app-title">Your CoRisk Score</h1>
+        <h1 className="app-title">Calculated CoRisk Score</h1>
         <div className="centered" id="score">
           <div id="score-content">
             <div id="score-content-value">{props.percentage}</div>

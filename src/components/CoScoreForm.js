@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import {validateAge} from '../core/coRiskScore';
+import {validateAge, validateNihssPoints, validateCopeptinLevel} from '../core/coRiskScore';
 
 const INITIAL = Number.MAX_SAFE_INTEGER;
 
@@ -11,8 +11,8 @@ const checkSubmittable = (state) => {
   return true;
 }
 
-const getAgeFormHint = (age) => {
-  const validationResult = validateAge(age);
+const getFormHint = (value, validator) => {
+  const validationResult = validator(value);
   if (!validationResult.isValid) {
     return validationResult.reason;
   }
@@ -21,7 +21,15 @@ const getAgeFormHint = (age) => {
 
 const updateState = (newState) => {
   if (newState.age !== INITIAL) {
-    newState.ageFormHint = getAgeFormHint(newState.age);
+    newState.ageFormHint = getFormHint(newState.age, validateAge);
+  }
+
+  if (newState.nihss !== INITIAL) {
+    newState.nihssFormHint = getFormHint(newState.nihss, validateNihssPoints);
+  }
+
+  if (newState.copeptin !== INITIAL) {
+    newState.copeptinFormHint = getFormHint(newState.copeptin, validateCopeptinLevel);
   }
 
   newState.isSubmittable = checkSubmittable(newState);
@@ -94,7 +102,7 @@ class CoScoreForm extends Component {
           </p>
 
           <p className="info">
-            Use the form below to calculate your score. All fields are required.
+            Use the form below to calculate your patient's score. All fields are required.
           </p>
 
           <form className="form-horizontal" action="" type="GET">
@@ -134,10 +142,20 @@ class CoScoreForm extends Component {
                   className="form-input"
                   name="nihss"
                   type="number"
+                  min="0"
+                  max="42"
                   value={this.state.nihss === INITIAL ? '' : this.state.nihss}
                   onChange={this
                   .handleNihssChange
                   .bind(this)}/>
+              </div>
+            </div>
+            <div
+              className={"form-group form-input-hint " + (this.state.nihssFormHint
+              ? ''
+              : 'hide')}>
+              <div className="col-12 text-right">
+                {this.state.nihssFormHint}
               </div>
             </div>
             
@@ -153,6 +171,14 @@ class CoScoreForm extends Component {
                   onChange={this
                   .handleCopeptinChange
                   .bind(this)}/>
+              </div>
+            </div>
+            <div
+              className={"form-group form-input-hint " + (this.state.copeptinFormHint
+              ? ''
+              : 'hide')}>
+              <div className="col-12 text-right">
+                {this.state.copeptinFormHint}
               </div>
             </div>
 
