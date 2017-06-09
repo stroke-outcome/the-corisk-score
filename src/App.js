@@ -1,19 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
+
 import './App.css';
 
+import parseUrlQueryKeyValue from './core/parseUrlQueryKeyValue';
+import CoScoreResult from './components/CoScoreResult';
+import CoScoreForm from './components/CoScoreForm';
+
 class App extends Component {
+
+  constructor(props) {
+    super(props);
+
+    const queryParams = parseUrlQueryKeyValue(window.location.search);
+    const {age, nihss, copeptin} = queryParams;
+
+    const state = {
+      age: age,
+      nihss: nihss,
+      copeptin: copeptin,
+      percentage: null
+    };
+
+    // TODO: calculate the formula and if valid, show it!
+    if (age && nihss && copeptin) {
+      state.percentage = 99;
+    }
+
+    this.state = state;
+  }
+
   render() {
+    if (this.state.percentage) {
+      return (<CoScoreResult percentage={this.state.percentage}/>);
+    }
+
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <CoScoreForm age={this.state.age} nihss={this.state.nihss} copeptin={this.state.copeptin} />
     );
   }
 }

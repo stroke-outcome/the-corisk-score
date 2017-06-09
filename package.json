@@ -5,14 +5,16 @@
   "homepage": "https://usb-neurology.github.io/the-corisk-score",
   "dependencies": {
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "spectre.css": "0.2.14"
   },
   "devDependencies": {
+    "chai": "4.0.2",
     "gh-pages": "1.0.0",
     "react-scripts": "1.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3011 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
