@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 import CoRiskScoreResult from './components/CoRiskScoreResult';
 import CoRiskScoreForm from './components/CoRiskScoreForm';
 
-import calculateCoRiskScore, {validateAge, validateNihssPoints, validateCopeptinLevel} from './core/coRiskScore';
+import calculateCoRiskScore from './core/coRiskScore';
 
 class App extends Component {
 

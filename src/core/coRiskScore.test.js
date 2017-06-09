@@ -142,6 +142,14 @@ describe('coRiskScore', () => {
       expect(result).to.equal(-1);
     });
 
+    it('should correctly calculate the coRisk score', () => {
+      // when
+      const result1 = calculateCoRiskScore(75, 7, 11.6);
+      const result2 = calculateCoRiskScore(75, 7, 116);
+      // then
+      expect(result1).to.equal(31);
+      expect(result2).to.equal(60);
+    });
 
 
   });
