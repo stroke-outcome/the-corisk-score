@@ -37,14 +37,19 @@ const updateState = (newState) => {
 }
 
 /**
- * Note that the default values are undefined 
+ * Note that the default values are undefined
  */
 class CoRiskScoreForm extends Component {
 
   constructor(props) {
     super(props);
 
-    const {age = INITIAL, nihss = INITIAL, copeptin = INITIAL} = props;
+    const {
+      age = INITIAL,
+      nihss = INITIAL,
+      copeptin = INITIAL
+    } = props;
+
     const state = {
       age: age,
       ageFormHint: '',
@@ -118,7 +123,9 @@ class CoRiskScoreForm extends Component {
                   type="number"
                   min="0"
                   max="200"
-                  value={this.state.age === INITIAL ? '' : this.state.age}
+                  value={this.state.age === INITIAL
+                  ? ''
+                  : this.state.age}
                   onChange={this
                   .handleAgeChange
                   .bind(this)}/>
@@ -144,7 +151,9 @@ class CoRiskScoreForm extends Component {
                   type="number"
                   min="0"
                   max="42"
-                  value={this.state.nihss === INITIAL ? '' : this.state.nihss}
+                  value={this.state.nihss === INITIAL
+                  ? ''
+                  : this.state.nihss}
                   onChange={this
                   .handleNihssChange
                   .bind(this)}/>
@@ -158,7 +167,7 @@ class CoRiskScoreForm extends Component {
                 {this.state.nihssFormHint}
               </div>
             </div>
-            
+
             <div className="form-group">
               <div className="col-6">
                 <label className="form-label">Copeptin blood level (pmol/L)</label>
@@ -167,7 +176,9 @@ class CoRiskScoreForm extends Component {
                 <input
                   className="form-input"
                   name="copeptin"
-                  value={this.state.copeptin === INITIAL ? '' : this.state.copeptin}
+                  value={this.state.copeptin === INITIAL
+                  ? ''
+                  : this.state.copeptin}
                   onChange={this
                   .handleCopeptinChange
                   .bind(this)}/>
