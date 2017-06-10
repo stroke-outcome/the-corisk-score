@@ -11,7 +11,12 @@ const CoRiskScoreResult = (props) => {
         <div className="centered fade-in" id="score">
           <div id="score-content">
             <div id="score-content-value">{props.percentage}</div>
-            <div id="score-content-percentage">%</div>
+            {/*<div id="score-content-percentage">%</div>*/}
+          </div>
+          <div id="score-content-badge">
+            <div id="score-content-badge-content">
+              %
+            </div>
           </div>
         </div>
 
@@ -28,9 +33,9 @@ const CoRiskScoreResult = (props) => {
         </div>
         */}
 
-
-        
-        <a href="./" className="btn btn-lg">Re-calculate</a>
+        <div className="centered">
+          <a href="./" className="btn btn-lg">Re-calculate</a>
+        </div>
       </div>
     </div>
   );

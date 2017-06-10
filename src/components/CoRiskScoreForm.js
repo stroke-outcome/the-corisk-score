@@ -125,7 +125,7 @@ class CoRiskScoreForm extends Component {
               </div>
             </div>
             <div
-              className={"form-group form-input-hint " + (this.state.ageFormHint
+              className={"form-group form-input-hint fade-in " + (this.state.ageFormHint
               ? ''
               : 'hide')}>
               <div className="col-12 text-right">
@@ -151,7 +151,7 @@ class CoRiskScoreForm extends Component {
               </div>
             </div>
             <div
-              className={"form-group form-input-hint " + (this.state.nihssFormHint
+              className={"form-group form-input-hint fade-in " + (this.state.nihssFormHint
               ? ''
               : 'hide')}>
               <div className="col-12 text-right">
@@ -174,7 +174,7 @@ class CoRiskScoreForm extends Component {
               </div>
             </div>
             <div
-              className={"form-group form-input-hint " + (this.state.copeptinFormHint
+              className={"form-group form-input-hint fade-in " + (this.state.copeptinFormHint
               ? ''
               : 'hide')}>
               <div className="col-12 text-right">
