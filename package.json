@@ -1,6 +1,6 @@
 {
   "name": "the-corisk-score",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://usb-neurology.github.io/the-corisk-score",
   "dependencies": {
