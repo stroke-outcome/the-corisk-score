@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import packageJson from './package.json.lnk';
+
 // import './App.css'; import parseUrlQueryKeyValue from
 // './core/parseUrlQueryKeyValue';
 
@@ -79,7 +81,7 @@ class App extends Component {
     return (
       <div>
         {this.renderContent()}
-        <Footer/>
+        <Footer version={packageJson.version}/>
       </div>
     );
   }
