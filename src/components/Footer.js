@@ -11,8 +11,7 @@ const Footer = (props) => {
           Licensed under the <a href="https://github.com/usb-neurology/the-corisk-score/blob/master/LICENSE">MIT License</a>. Version {props.version}
         </p>
         <p>
-          Built with ❤ by
-          <a href="https://smalldata.tech">SmallData</a>.
+          Built with ❤ by <a href="https://smalldata.tech">SmallData</a>.
         </p>
       </section>
     </footer>
