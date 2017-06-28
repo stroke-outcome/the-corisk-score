@@ -64,13 +64,10 @@ export const validateCopeptinLevel = (copeptinStr) => {
     return getInvalidResult('Copeptin level must be a number');
   }
 
-  // is there a copeptin range?
-  /*
-  if (copeptin < 0 || copeptin > 42) {
-    return getInvalidResult('Nihss points must be between 0 and 42 inclusive');
+  if (copeptin > 999) {
+    return getInvalidResult('Copeptin level must be below 999');
   }
-  */
-
+  
   return getValidResult(copeptin);
 };
 

@@ -39,6 +39,17 @@ describe('coRiskScore', () => {
 
     });
 
+    it('should validate max age', () => {
+      // given
+      const ageStr = '121';
+
+      // when
+      const result = validateAge(ageStr);
+
+      // then
+      expect(result).to.deep.equal({ value: null, reason: 'Age must be between 0 and 120', isValid: false });
+    });
+
   });
 
   describe('validateNihssPoints', () => {
@@ -77,6 +88,18 @@ describe('coRiskScore', () => {
 
     });
 
+    it('should validate max nihss points', () => {
+      // given
+      const nihssStr = '43';
+
+      // when
+      const result = validateNihssPoints(nihssStr);
+
+      // then
+      expect(result).to.deep.equal({ value: null, reason: 'Nihss points must be between 0 and 42 inclusive', isValid: false });
+
+    });
+
   });
 
   describe('validateCopeptinLevel', () => {
@@ -112,6 +135,18 @@ describe('coRiskScore', () => {
 
       // then
       expect(result).to.deep.equal({ value: null, reason: 'Copeptin level is required', isValid: false });
+
+    });
+
+    it('should validate max copeptin level', () => {
+      // given
+      const copeptinStr = '999.1';
+
+      // when
+      const result = validateCopeptinLevel(copeptinStr);
+
+      // then
+      expect(result).to.deep.equal({ value: null, reason: 'Copeptin level must be below 999', isValid: false });
 
     });
 
