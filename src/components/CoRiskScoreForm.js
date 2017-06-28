@@ -69,7 +69,7 @@ class CoRiskScoreForm extends Component {
     this.setState(newState);
   }
 
-  handleAgeChange(event) {
+  handleAgeChange = (event) => {
     const newState = {
       ...this.state,
       age: event.target.value
@@ -78,7 +78,7 @@ class CoRiskScoreForm extends Component {
     this.setLocalState(newState);
   }
 
-  handleNihssChange(event) {
+  handleNihssChange = (event) => {
     const newState = {
       ...this.state,
       nihss: event.target.value
@@ -87,7 +87,7 @@ class CoRiskScoreForm extends Component {
     this.setLocalState(newState);
   }
 
-  handleCopeptinChange(event) {
+  handleCopeptinChange = (event) => {
     const newState = {
       ...this.state,
       copeptin: event.target.value
@@ -140,8 +140,7 @@ class CoRiskScoreForm extends Component {
                   ? ''
                   : this.state.age}
                   onChange={this
-                  .handleAgeChange
-                  .bind(this)}/>
+                  .handleAgeChange}/>
               </div>
             </div>
             <div
@@ -168,8 +167,7 @@ class CoRiskScoreForm extends Component {
                   ? ''
                   : this.state.nihss}
                   onChange={this
-                  .handleNihssChange
-                  .bind(this)}/>
+                  .handleNihssChange}/>
               </div>
             </div>
             <div
@@ -193,8 +191,7 @@ class CoRiskScoreForm extends Component {
                   ? ''
                   : this.state.copeptin}
                   onChange={this
-                  .handleCopeptinChange
-                  .bind(this)}/>
+                  .handleCopeptinChange}/>
               </div>
             </div>
             <div
