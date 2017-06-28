@@ -4,8 +4,8 @@
   "private": true,
   "homepage": "https://usb-neurology.github.io/the-corisk-score",
   "dependencies": {
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
     "react-ga": "2.2.0",
     "spectre.css": "0.2.14"
   },
