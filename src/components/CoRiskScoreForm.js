@@ -135,7 +135,7 @@ class CoRiskScoreForm extends Component {
                   name="age"
                   type="number"
                   min="0"
-                  max="200"
+                  max="120"
                   value={this.state.age === INITIAL
                   ? ''
                   : this.state.age}

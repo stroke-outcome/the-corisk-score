@@ -26,8 +26,8 @@ export const validateAge = (ageStr) => {
     return getInvalidResult('Age must be a number');
   }
 
-  if (age < 0 || age > 200) {
-    return getInvalidResult('Age must be between 0 and 200');
+  if (age < 0 || age > 120) {
+    return getInvalidResult('Age must be between 0 and 120');
   }
 
   return getValidResult(age);
