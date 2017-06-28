@@ -4,6 +4,11 @@ import './CoRiskScoreResult.css';
 
 const CoRiskScoreResult = (props) => {
 
+  const handleRecalculate = (event) => {
+    event.preventDefault();
+    props.onRecalculate();
+  }
+
   return (
     <div className="container grid-480">
       <div className="text-center">
@@ -34,7 +39,7 @@ const CoRiskScoreResult = (props) => {
         */}
 
         <div className="centered">
-          <a href="./" className="btn btn-lg">Re-calculate</a>
+          <a href="#" className="btn btn-lg" onClick={handleRecalculate}>Re-calculate</a>
         </div>
       </div>
     </div>

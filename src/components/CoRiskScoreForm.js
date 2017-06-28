@@ -96,6 +96,15 @@ class CoRiskScoreForm extends Component {
     this.setLocalState(newState);
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const state = this.state;
+
+    this
+      .props
+      .onCalculate({age: state.age, nihss: state.nihss, copeptin: state.copeptin});
+  }
+
   render() {
     return (
       <div className="container grid-480">
@@ -110,7 +119,11 @@ class CoRiskScoreForm extends Component {
             Use the form below to calculate your patient's score. All fields are required.
           </p>
 
-          <form className="form-horizontal" action="" type="GET">
+          <form
+            className="form-horizontal"
+            action=""
+            type="GET"
+            onSubmit={this.handleSubmit}>
 
             <div className="form-group">
               <div className="col-6">
