@@ -111,7 +111,7 @@ class CoRiskScoreForm extends Component {
         <div className="">
           <h1 className="app-title text-center">The CoRisk Score</h1>
           <p className="info ">
-            The CoRisk score is the probability of an unfavorable 3-month outcome for
+            The CoRisk Score calculates the probability of an unfavorable 3-month outcome for
             patients using Copeptin.
           </p>
 
