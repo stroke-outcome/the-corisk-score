@@ -2,7 +2,7 @@
   "name": "the-corisk-score",
   "version": "0.2.2",
   "private": true,
-  "homepage": "https://usb-neurology.github.io/the-corisk-score",
+  "homepage": "https://stroke-outcome.github.io/the-corisk-score",
   "dependencies": {
     "react": "15.6.1",
     "react-dom": "15.6.1",
