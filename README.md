@@ -22,11 +22,17 @@ npm test
 ## Production
 
 This project is hosted on github and can be published via:
+
 ```
 npm run deploy
 ```
 
-## TODO
+To deploy to `usb-neurology`:
 
-- Copeptin form validations
+- Update `package.json` to set correct root url
+- `gh-pages -d build --repo git@github.com:usb-neurology/the-corisk-score.git`
+
+## Misc
+
 - https://developer.mozilla.org/en-US/docs/Web/MathML/Authoring
+
