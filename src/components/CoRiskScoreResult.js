@@ -39,7 +39,7 @@ const CoRiskScoreResult = (props) => {
         */}
 
         <div className="centered">
-          <a href="#" className="btn btn-lg" onClick={handleRecalculate}>Re-calculate</a>
+          <a className="btn btn-lg" onClick={handleRecalculate}>Re-calculate</a>
         </div>
       </div>
     </div>
