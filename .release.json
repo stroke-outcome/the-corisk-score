@@ -1,8 +1,0 @@
-{
-  "verbose": true,
-  "src": {
-    "beforeStartCommand": "CI=true npm test",
-    "afterReleaseCommand": "npm run deploy"
-  }
-}
-
