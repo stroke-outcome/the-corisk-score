@@ -8,7 +8,7 @@ const Footer = (props) => {
     <footer className="bg-gray">
       <section className="grid-footer container grid-480">
         <p>
-          Licensed under the <a href="https://github.com/usb-neurology/the-corisk-score/blob/master/LICENSE">MIT License</a>. Version {props.version}
+          Licensed under the <a href="https://github.com/stroke-outcome/the-corisk-score/blob/master/LICENSE">MIT License</a>. Version {props.version}
         </p>
         <p>
           Built with ❤ by <a href="https://smalldata.tech">SmallData</a>.
