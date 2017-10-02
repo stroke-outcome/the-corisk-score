@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import {validateAge, validateNihssPoints, validateCopeptinLevel} from '../core/coRiskScore';
+import CoRiskScoreFormHint from './CoRiskScoreFormHint';
 
 const INITIAL = Number.MAX_SAFE_INTEGER;
 
@@ -143,15 +144,9 @@ class CoRiskScoreForm extends Component {
                   .handleAgeChange}/>
               </div>
             </div>
-            <div
-              className={"form-group form-input-hint fade-in " + (this.state.ageFormHint
-              ? ''
-              : 'hide')}>
-              <div className="col-12 text-right">
-                {this.state.ageFormHint}
-              </div>
-            </div>
-
+            
+            <CoRiskScoreFormHint formHint={this.state.ageFormHint}/>
+            
             <div className="form-group">
               <div className="col-6">
                 <label className="form-label">NIHSS points</label>
@@ -170,15 +165,10 @@ class CoRiskScoreForm extends Component {
                   .handleNihssChange}/>
               </div>
             </div>
-            <div
-              className={"form-group form-input-hint fade-in " + (this.state.nihssFormHint
-              ? ''
-              : 'hide')}>
-              <div className="col-12 text-right">
-                {this.state.nihssFormHint}
-              </div>
-            </div>
-
+            
+            <CoRiskScoreFormHint formHint={this.state.nihssFormHint}/>
+            
+        
             <div className="form-group">
               <div className="col-6">
                 <label className="form-label">Copeptin blood level (pmol/L)</label>
@@ -194,14 +184,8 @@ class CoRiskScoreForm extends Component {
                   .handleCopeptinChange}/>
               </div>
             </div>
-            <div
-              className={"form-group form-input-hint fade-in " + (this.state.copeptinFormHint
-              ? ''
-              : 'hide')}>
-              <div className="col-12 text-right">
-                {this.state.copeptinFormHint}
-              </div>
-            </div>
+            
+            <CoRiskScoreFormHint formHint={this.state.copeptinFormHint}/>
 
             <div className="form-group mt-30">
               <div className="col-12 text-center">
