@@ -1,5 +1,7 @@
 # The CoRisk Score
 
+See the `docs/` folder for non-technical information.
+
 ## Development
 
 This project has been bootstrapped via the `create-react-app`.

@@ -48,7 +48,8 @@ class CoRiskScoreForm extends Component {
     const {
       age = INITIAL,
       nihss = INITIAL,
-      copeptin = INITIAL
+      copeptin = INITIAL,
+      thrombolysis = false
     } = props;
 
     const state = {
@@ -58,6 +59,7 @@ class CoRiskScoreForm extends Component {
       nihssFormHint: '',
       copeptin: copeptin,
       copeptinFormHint: '',
+      thrombolysis: thrombolysis,
       isSubmittable: false
     };
 
@@ -97,13 +99,29 @@ class CoRiskScoreForm extends Component {
     this.setLocalState(newState);
   }
 
+  handleThrombolysisChange = (thrombolysis) => {
+    const newState = {
+      ...this.state,
+      thrombolysis
+    }
+    this.setLocalState(newState);
+  }
+
+  handleThrombolysisYes = () => {
+    this.handleThrombolysisChange(true);
+  }
+
+  handleThrombolysisNo = () => {
+    this.handleThrombolysisChange(false);
+  }
+
   handleSubmit = (event) => {
     event.preventDefault();
-    const state = this.state;
+    const {age, nihss, copeptin, thrombolysis} = this.state;
 
     this
       .props
-      .onCalculate({age: state.age, nihss: state.nihss, copeptin: state.copeptin});
+      .onCalculate({age, nihss, copeptin, thrombolysis});
   }
 
   render() {
@@ -112,8 +130,8 @@ class CoRiskScoreForm extends Component {
         <div className="">
           <h1 className="app-title text-center">The CoRisk Score</h1>
           <p className="info ">
-            The CoRisk Score calculates the probability of an unfavorable 3-month outcome for
-            patients using Copeptin.
+            The CoRisk Score calculates the probability of an unfavorable 3-month outcome
+            for patients using Copeptin.
           </p>
 
           <p className="info">
@@ -140,13 +158,12 @@ class CoRiskScoreForm extends Component {
                   value={this.state.age === INITIAL
                   ? ''
                   : this.state.age}
-                  onChange={this
-                  .handleAgeChange}/>
+                  onChange={this.handleAgeChange}/>
               </div>
             </div>
-            
+
             <CoRiskScoreFormHint formHint={this.state.ageFormHint}/>
-            
+
             <div className="form-group">
               <div className="col-6">
                 <label className="form-label">NIHSS points</label>
@@ -161,14 +178,12 @@ class CoRiskScoreForm extends Component {
                   value={this.state.nihss === INITIAL
                   ? ''
                   : this.state.nihss}
-                  onChange={this
-                  .handleNihssChange}/>
+                  onChange={this.handleNihssChange}/>
               </div>
             </div>
-            
+
             <CoRiskScoreFormHint formHint={this.state.nihssFormHint}/>
-            
-        
+
             <div className="form-group">
               <div className="col-6">
                 <label className="form-label">Copeptin blood level (pmol/L)</label>
@@ -180,12 +195,41 @@ class CoRiskScoreForm extends Component {
                   value={this.state.copeptin === INITIAL
                   ? ''
                   : this.state.copeptin}
-                  onChange={this
-                  .handleCopeptinChange}/>
+                  onChange={this.handleCopeptinChange}/>
               </div>
             </div>
-            
-            <CoRiskScoreFormHint formHint={this.state.copeptinFormHint}/>
+
+            <CoRiskScoreFormHint formHint={this.state.copeptinFormHint}/> {/*
+            <div className="form-group">
+              <div className="col-6">
+                <label className="form-label">Thrombolysis</label>
+              </div>
+              <div className="col-6">
+                <label className="form-checkbox">
+                  <input type="checkbox"/>
+                  <i className="form-icon"/>
+                </label>
+              </div>
+            </div>
+            */}
+
+            <div className="form-group">
+              <div className="col-6">
+                <label className="form-label">Thrombolysis</label>
+              </div>
+              <div className="col-6">
+                <label className="form-radio">
+                  <input type="radio" name="thrombolysis" checked={this.state.thrombolysis} onChange={this.handleThrombolysisYes}/>
+                  <i className="form-icon"></i>
+                  Yes
+                </label>
+                <label className="form-radio">
+                  <input type="radio" name="thrombolysis" checked={!this.state.thrombolysis} onChange={this.handleThrombolysisNo}/>
+                  <i className="form-icon"></i>
+                  No
+                </label>
+              </div>
+            </div>
 
             <div className="form-group mt-30">
               <div className="col-12 text-center">

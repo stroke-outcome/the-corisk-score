@@ -19,21 +19,25 @@ class App extends Component {
       age: undefined,
       nihss: undefined,
       copeptin: undefined,
+      thrombolysis: false,
       percentage: null
     };
 
     this.state = state;
   }
 
-  onCalculate = ({age, nihss, copeptin}) => {
+  onCalculate = ({age, nihss, copeptin, thrombolysis}) => {
     const state = this.state;
+    const percentage = calculateCoRiskScore({age, nihss, copeptin, thrombolysis});
+    console.log(percentage);
 
     this.setState({
       ...state,
-      age: age,
-      nihss: nihss,
-      copeptin: copeptin,
-      percentage: calculateCoRiskScore({age, nihss, copeptin})
+      age,
+      nihss,
+      copeptin,
+      thrombolysis,
+      percentage
     });
   }
 
@@ -44,6 +48,15 @@ class App extends Component {
       ...state,
       percentage: null
     });
+  }
+
+  render() {
+    return (
+      <div>
+        {this.renderContent()}
+        <Footer version={packageJson.version}/>
+      </div>
+    );
   }
 
   renderContent() {
@@ -59,16 +72,8 @@ class App extends Component {
       age={this.state.age}
       nihss={this.state.nihss}
       copeptin={this.state.copeptin}
+      thrombolysis={this.state.thrombolysis}
       onCalculate={this.onCalculate}/>);
-  }
-
-  render() {
-    return (
-      <div>
-        {this.renderContent()}
-        <Footer version={packageJson.version}/>
-      </div>
-    );
   }
 }
 

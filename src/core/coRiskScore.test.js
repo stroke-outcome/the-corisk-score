@@ -181,12 +181,18 @@ describe('coRiskScore', () => {
       // when
       const result1 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 11.6 });
       const result2 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 116 });
-      // const result3 = calculateCoRiskScore(75, 7, 11.6, 1);
+      const result3 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 11.6, thrombolysis: 1 });
+      const result4 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 116, thrombolysis: 1 });
+      const result5 = calculateCoRiskScore({ age: 23, nihss: 23, copeptin: 23, thrombolysis: 1 });
+      const result6 = calculateCoRiskScore({ age: 23, nihss: 23, copeptin: 23, thrombolysis: 0 });
 
       // then
-      expect(result1).to.equal(31);
-      expect(result2).to.equal(60);
-      // expect(result3).to.equal(13);
+      expect(result1).to.equal(46);
+      expect(result2).to.equal(73);
+      expect(result3).to.equal(13);
+      expect(result4).to.equal(34);
+      expect(result5).to.equal(32);
+      expect(result6).to.equal(72);
     });
 
 

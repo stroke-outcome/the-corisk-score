@@ -71,12 +71,14 @@ export const validateCopeptinLevel = (copeptinStr) => {
   return getValidResult(copeptin);
 };
 
-const calculateCoRiskScore = ({ age, nihss, copeptin }) => {
+const calculateCoRiskScore = ({ age, nihss, copeptin, thrombolysis = false }) => {
   if (!validateAge(age).isValid || !validateNihssPoints(nihss).isValid || !validateCopeptinLevel(copeptin).isValid) {
     return -1;
   }
 
-  const value = 1 / (1 + Math.exp(7.661 - (0.060 * age) - (0.157 * nihss) - (1.2 * Math.log10(copeptin))));
+  const thrombolysisParam = thrombolysis ? 1 : 0;
+
+  const value = 1 / (1 + Math.exp(7.006 - (0.054 * age) - (0.223 * nihss) + (1.698 * thrombolysisParam) - (1.18 * Math.log10(copeptin))));
 
   return parseInt(value * 100, 10);
 };
