@@ -155,7 +155,7 @@ describe('coRiskScore', () => {
   describe('calculateCoRiskScore', () => {
     it('should return -1 when invalid age provided', () => {
       // when
-      const result = calculateCoRiskScore(undefined, 1, 1);
+      const result = calculateCoRiskScore({ age: undefined, nihss: 1, copeptin: 1 });
 
       // then
       expect(result).to.equal(-1);
@@ -163,7 +163,7 @@ describe('coRiskScore', () => {
 
     it('should return -1 when invalid nihss points provided', () => {
       // when
-      const result = calculateCoRiskScore(1, undefined, 1);
+      const result = calculateCoRiskScore({ age: 1, nihss: undefined, copeptin: 1 });
 
       // then
       expect(result).to.equal(-1);
@@ -171,7 +171,7 @@ describe('coRiskScore', () => {
 
     it('should return -1 when invalid copeptin level provided', () => {
       // when
-      const result = calculateCoRiskScore(1, 1, undefined);
+      const result = calculateCoRiskScore({ age: 1, nihss: 1, copeptin: undefined });
 
       // then
       expect(result).to.equal(-1);
@@ -179,11 +179,14 @@ describe('coRiskScore', () => {
 
     it('should correctly calculate the coRisk score', () => {
       // when
-      const result1 = calculateCoRiskScore(75, 7, 11.6);
-      const result2 = calculateCoRiskScore(75, 7, 116);
+      const result1 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 11.6 });
+      const result2 = calculateCoRiskScore({ age: 75, nihss: 7, copeptin: 116 });
+      // const result3 = calculateCoRiskScore(75, 7, 11.6, 1);
+
       // then
       expect(result1).to.equal(31);
       expect(result2).to.equal(60);
+      // expect(result3).to.equal(13);
     });
 
 
