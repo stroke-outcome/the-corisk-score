@@ -8,8 +8,8 @@ import App from './App';
 import {unregister as unregisterServiceWorker} from './registerServiceWorker';
 import './index.css';
 
-import ReactGA from 'react-ga';
-ReactGA.initialize('UA-41172423-3');
+// import ReactGA from 'react-ga';
+// ReactGA.initialize('UA-41172423-3');
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

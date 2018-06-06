@@ -6,7 +6,6 @@
   "dependencies": {
     "react": "15.6.2",
     "react-dom": "15.6.2",
-    "react-ga": "2.3.4",
     "spectre.css": "0.2.14"
   },
   "devDependencies": {
