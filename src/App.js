@@ -8,7 +8,7 @@ import CoRiskScoreForm from './components/CoRiskScoreForm';
 
 import calculateCoRiskScore from './core/coRiskScore';
 
-import ReactGA from 'react-ga';
+// import ReactGA from 'react-ga';
 
 class App extends Component {
 
@@ -61,13 +61,13 @@ class App extends Component {
 
   renderContent() {
     if (this.state.percentage !== null) {
-      ReactGA.pageview('/form');
+      // ReactGA.pageview('/form');
       return (<CoRiskScoreResult
         percentage={this.state.percentage}
         onRecalculate={this.onRecalculate}/>);
     }
 
-    ReactGA.pageview('/result');
+    // ReactGA.pageview('/result');
     return (<CoRiskScoreForm
       age={this.state.age}
       nihss={this.state.nihss}
