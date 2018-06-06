@@ -78,7 +78,7 @@ const calculateCoRiskScore = ({ age, nihss, copeptin, thrombolysis = false }) =>
 
   const thrombolysisParam = thrombolysis ? 1 : 0;
 
-  const value = 1 / (1 + Math.exp(7.006 - (0.054 * age) - (0.223 * nihss) + (1.698 * thrombolysisParam) - (1.18 * Math.log10(copeptin))));
+  const value = 1 / (1 + Math.exp(7.201586 - (0.05702 * age) - (0.22001 * nihss) + (2.05353 * thrombolysisParam) - (1.18481 * Math.log10(copeptin))));
 
   return parseInt(value * 100, 10);
 };

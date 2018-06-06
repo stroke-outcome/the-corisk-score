@@ -188,11 +188,11 @@ describe('coRiskScore', () => {
 
       // then
       expect(result1).to.equal(46);
-      expect(result2).to.equal(73);
-      expect(result3).to.equal(13);
-      expect(result4).to.equal(34);
-      expect(result5).to.equal(32);
-      expect(result6).to.equal(72);
+      expect(result2).to.equal(74);
+      expect(result3).to.equal(10);
+      expect(result4).to.equal(27);
+      expect(result5).to.equal(21);
+      expect(result6).to.equal(68);
     });
 
 
