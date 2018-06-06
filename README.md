@@ -29,10 +29,10 @@ This project is hosted on github and can be published via:
 npm run deploy
 ```
 
-To deploy to `usb-neurology`:
+To deploy to `stroke-outcome`:
 
 - Update `package.json` to set correct root url
-- `gh-pages -d build --repo git@github.com:usb-neurology/the-corisk-score.git`
+- `gh-pages -d build --repo git@github.com:stroke-outcome/the-corisk-score.git`
 
 ## Misc
 
