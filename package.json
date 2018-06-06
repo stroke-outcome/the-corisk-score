@@ -13,7 +13,7 @@
     "chai": "4.1.2",
     "gh-pages": "1.0.0",
     "react-scripts": "1.0.14",
-    "release-it": "3.0.2"
+    "release-it": "^7.4.7"
   },
   "scripts": {
     "start": "PORT=3011 react-scripts start",
