@@ -4,15 +4,15 @@
   "private": true,
   "homepage": "https://stroke-outcome.github.io/the-corisk-score",
   "dependencies": {
-    "react": "16.4.0",
-    "react-dom": "16.4.0",
+    "react": "16.4.1",
+    "react-dom": "16.4.1",
     "spectre.css": "0.2.14"
   },
   "devDependencies": {
     "chai": "4.1.2",
     "gh-pages": "1.2.0",
     "react-scripts": "1.1.4",
-    "release-it": "^7.4.7"
+    "release-it": "7.4.7"
   },
   "scripts": {
     "start": "PORT=3011 react-scripts start",
