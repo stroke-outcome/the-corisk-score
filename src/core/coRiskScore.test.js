@@ -187,12 +187,12 @@ describe('coRiskScore', () => {
       const result6 = calculateCoRiskScore({ age: 23, nihss: 23, copeptin: 23, thrombolysis: 0 });
 
       // then
-      expect(result1).to.equal(46);
+      expect(result1).to.equal(47);
       expect(result2).to.equal(74);
       expect(result3).to.equal(10);
       expect(result4).to.equal(27);
-      expect(result5).to.equal(21);
-      expect(result6).to.equal(68);
+      expect(result5).to.equal(22);
+      expect(result6).to.equal(69);
     });
 
 
