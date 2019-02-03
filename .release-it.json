@@ -1,10 +1,28 @@
 {
-  "verbose": true,
   "pkgFiles": ["package.json", "package-lock.json"],
-  "requireCleanWorkingDir": true,
-  "src": {
-    "beforeStartCommand": "CI=true npm test",
-    "afterReleaseCommand": "npm run deploy"
+  "use": "git.tag",
+  "scripts": {
+    "beforeStart": "CI=true npm test",
+    "beforeBump": null,
+    "afterBump": null,
+    "beforeStage": null,
+    "changelog": "git log --pretty=format:\"* %s (%h)\" [REV_RANGE]",
+    "afterRelease": "npm run deploy"
+  },
+  "git": {
+    "requireCleanWorkingDir": true,
+    "requireUpstream": true,
+    "addUntrackedFiles": false,
+    "commit": true,
+    "commitMessage": "Release ${version}",
+    "commitArgs": "",
+    "tag": true,
+    "tagName": "${version}",
+    "tagAnnotation": "Release ${version}",
+    "tagArgs": "",
+    "push": true,
+    "pushArgs": "",
+    "pushRepo": "origin"
   },
   "npm": {
     "publish": false
@@ -12,12 +30,15 @@
   "github": {
     "release": false
   },
+  "gitlab": {
+    "release": false
+  },
   "prompt": {
-    "src": {
-      "status": true,
-      "tag": true,
-      "release": false,
-      "publish": false
-    }
+    "commit": true,
+    "tag": true,
+    "push": true,
+    "ghRelease": false,
+    "glRelease": false,
+    "publish": false
   }
 }
