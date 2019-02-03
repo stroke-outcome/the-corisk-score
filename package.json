@@ -1,6 +1,6 @@
 {
   "name": "the-corisk-score",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "private": true,
   "homepage": "https://stroke-outcome.github.io/the-corisk-score",
   "dependencies": {
